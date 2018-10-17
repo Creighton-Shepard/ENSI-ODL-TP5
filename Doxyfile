@@ -1,0 +1,7 @@
+PROJET_NAME = "Calorical Ratio"
+OUTPUT_DIRECTORY = doc/
+INPUT = ./src/main.c ./src/f.c ./test/testf.c 
+FILE_PATTERNS = include/*.h src/*.c
+GENERATE_HTML = YES
+GENERATE_LATEX = NO
+GENERATE_RTF = NO
