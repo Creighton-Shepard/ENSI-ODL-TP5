@@ -64,7 +64,7 @@ float find_body_surface(float weight, float height){
 * @return metabolism index of the person 
 */
 float find_metabolism_index(int age_coeff, int body_surface){
-    if (age_coeff != 45 || age_coeff != 40 || age_coeff != 35){
+    if (age_coeff != 45 && age_coeff != 40 && age_coeff != 35){
         return -1;
     }
     if (body_surface <= 0){
@@ -96,7 +96,7 @@ float correct_metabolism(float metabolism, char sex, int pregnant){
     }
     if (sex == 'f'){
         metabolism *= 0.9;
-        metabolism = correct_metabolism_for_pregancy(metabolism, pregnant);
+        metabolism = correct_metabolism_for_pregnancy(metabolism, pregnant);
     }
     return metabolism;
 }
@@ -107,7 +107,7 @@ float correct_metabolism(float metabolism, char sex, int pregnant){
 * @param pregnant boolean : true if pregnant and false if not
 * @return the metabolism index of the person whatever if she pregnant or not pregnancy
 */
-float correct_metabolism_for_pregancy(float metabolism, int pregnant){
+float correct_metabolism_for_pregnancy(float metabolism, int pregnant){
     if (metabolism < 0){
         return -1;
     }

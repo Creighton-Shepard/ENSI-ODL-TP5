@@ -47,8 +47,21 @@ int main(){
     scanf("%f", &(i.height));
 
     i.coeff_age = find_age_coefficient(i.age);
+    if (i.coeff_age == -1 || i.coeff_age == -2){
+        perror("Error when finding the age coefficient\n");
+        return 1;
+    }
     i.metabolism = find_metabolism_index(i.coeff_age, find_body_surface(i.weight, i.height));
+    /* inferior to 0 because if it's find_body_surface who has the problem i.metabolism will be negaative but not equal to -1*/
+    if (i.metabolism <= 0){
+        perror("Error when finding the metabolism index\n");
+        return 1;
+    }
     i.metabolism = correct_metabolism(i.metabolism, i.sex, i.pregnant);
+    if (i.metabolism == -1 || i.metabolism == -2 || i.metabolism == -3 || i.metabolism == -4){
+        perror("Error when correcting the metabolism index\n");
+        return 1;
+    }
 
     printf("Standard  Metabolism : %f\n", i.metabolism);
 
@@ -60,6 +73,10 @@ int main(){
     scanf("%d", &(i.a.sport_hn));
 
     i.metabolism=find_activity_metabolism_index(i.metabolism, i.a.sed_hn, i.a.light_hn, i.a.sport_hn);
+    if (i.metabolism == -1 || i.metabolism == -2 || i.metabolism == -3 || i.metabolism == -4){
+        perror("Error when finding the activity metabolism index\n");
+        return 1;
+    }
 
     printf("Metabolism of activity : %f\n", i.metabolism);
     

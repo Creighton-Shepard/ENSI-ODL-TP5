@@ -82,7 +82,7 @@ float correct_metabolism(float metabolism, char sex, int pregnant);
 * @param pregnant boolean : true if pregnant and false if not
 * @return the metabolism index of the person whatever if she pregnant or not pregnancy
 */
-float correct_metabolism_for_pregancy(float metabolism, int pregnant);
+float correct_metabolism_for_pregnancy(float metabolism, int pregnant);
 
 /**
 * Find the activity metabolism using the activity datas of the person in a day

@@ -23,6 +23,14 @@
 #include "../include/f.h"
 #include <assert.h>
 
+/* Prototype of next function */
+void test_f_a_c();
+void test_f_b_s();
+void test_f_m_i();
+void test_c_m_f_p();
+void test_c_m();
+void test_f_a_m_i();
+
 /**
 * Main functon used to run all the tests at once
 * @param argc integer number of char argument put in the call of this function
